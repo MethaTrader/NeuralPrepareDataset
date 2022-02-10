@@ -10,18 +10,6 @@ The program also optimizes the image and reduces its size to **640x480 pixels**,
 
 <img src="https://i.ibb.co/X8rYMB2/step-2.png" alt="step-2" border="0">
 
-
-## How it works
-
-
-```mermaid
-graph LR
-A[Files] -- Optimized --> B((Images))
-A --> C(Annotations)
-B --> D{Dataset}
-C --> D
-```
-
 ## License
 [MIT](https://opensource.org/licenses/MIT)
 
