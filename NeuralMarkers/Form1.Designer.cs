@@ -91,7 +91,7 @@
             this.toolStripMenuItem1.Checked = true;
             this.toolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Случайные имена";
             // 
             // оПрограммеToolStripMenuItem
@@ -142,8 +142,10 @@
             this.Controls.Add(this.resizePhotoButton);
             this.Controls.Add(this.infoFiles);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "NeuralMarkers";
             this.Text = "NeuralPrepareDataset";
             this.menuStrip1.ResumeLayout(false);
