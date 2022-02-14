@@ -21,6 +21,15 @@ namespace NeuralMarkers
             InitializeComponent();
         }
 
+        private void NeuralMarkers_Load(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(button_LoadForm_2, "Поиск jpg файлов без пары txt \n" +
+                "fksf.txt == fksf.jpg\n" +
+                "gfrd.txt == gfrd.jpg");
+
+        }
+
         public string WorkingDirectory = ""; //рабочая папка
         public string[] WorkingFiles = null; //рабочие файлы
 
@@ -78,12 +87,14 @@ namespace NeuralMarkers
         }
 
         //меняем размер фото
-        public static Bitmap ResizeImage(Image image, int width, int height)
+        public static async Task<Bitmap> ResizeImage(Image image, int width, int height)
         {
 
                 var destRect = new Rectangle(0, 0, width, height);
                 var destImage = new Bitmap(width, height);
 
+            await Task.Run(() =>
+            {
                 destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
                 using (var graphics = Graphics.FromImage(destImage))
@@ -101,8 +112,9 @@ namespace NeuralMarkers
                     }
                 }
 
+            });
                 return destImage;
-            
+
         }
 
         private static ImageCodecInfo GetEncoder(ImageFormat format)
@@ -119,7 +131,7 @@ namespace NeuralMarkers
         }
 
         //обрабатываем фото
-        public void resizePhotoButton_Click(object sender, EventArgs e)
+        public async void resizePhotoButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -137,10 +149,10 @@ namespace NeuralMarkers
                     if (WorkingFiles[i].EndsWith(".jpg"))
                     {
                         Image photo = Image.FromFile(WorkingFiles[i]);
-                        Image newPhoto = ResizeImage(photo, 640, 480);
+                        Image newPhoto = await ResizeImage(photo, 640, 480);
 
                         myEncoderParameters.Param[0] = myEncoderParameter;
-                        newPhoto.Save(WorkingDirectory + "/" + DestrinitionFolder + "/" + generateUniqFileName(8), jpgEncoder, myEncoderParameters);
+                        newPhoto.Save(WorkingDirectory + "/" + DestrinitionFolder + "/" +$"{CountCompletedFiles}_" + $"{WorkingFiles.Count()}_"+ generateUniqFileName(8) , jpgEncoder, myEncoderParameters);
                         CountCompletedFiles++;
                         completedFilesInfo.Text = "Обработано файлов: " + CountCompletedFiles + " / " + WorkingFiles.Count();
                     }
@@ -151,9 +163,9 @@ namespace NeuralMarkers
                 Cursor = Cursors.Default;
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Произошла ошибка при обработке фото", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Произошла ошибка при обработке фото", $"Ошибка! \n{ex.Message}", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -198,6 +210,12 @@ namespace NeuralMarkers
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void button_LoadForm_2_Click(object sender, EventArgs e)
+        {
+            var load_form = new Form2();
+            load_form.Show();
         }
     }
 }
