@@ -1,0 +1,13 @@
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\bin\Debug\NeuralMarkers.exe.config
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\bin\Debug\NeuralMarkers.exe
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\bin\Debug\NeuralMarkers.pdb
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.csproj.SuggestedBindingRedirects.cache
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.About.resources
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.NeuralMarkers.resources
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.Properties.Resources.resources
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.csproj.GenerateResource.cache
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.exe
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.pdb
+C:\Users\user1\Desktop\NeuralPrepareDataset-master\NeuralMarkers\obj\Debug\NeuralMarkers.Form2.resources
